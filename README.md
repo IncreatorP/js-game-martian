@@ -1,7 +1,10 @@
 # js-game-martian
+Martian Rustlers
 An arcade shooter written in JavaScript
 
 A small browser shoot 'em up written in plain JavaScript.
+
+![alt text](image.png)
 
 **Features**
 - Custom game loop (requestAnimationFrame)
