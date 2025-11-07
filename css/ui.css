@@ -1,0 +1,373 @@
+@font-face {
+  font-family: 'NesFONT';
+  src: url('../fonts/Pixel_NES.otf');
+}
+
+body {
+  background-image: url('../img/sSiteBg.png');
+  margin: 0;
+  padding: 0;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-container {
+  position: relative;
+  width: 768px;
+  height: 768px;
+  scale: 1 1;
+  background-color: #000000;
+  image-rendering: pixelated;
+  overflow: hidden;
+}
+
+#ui-bar {
+  z-index: 1000;
+  display: flex;
+  position: absolute;
+  justify-content: space-evenly;
+  left: 0px;
+  top: 0px; 
+  width: 768px;
+  height: 48px;
+  background-image: url('../img/sUIBar.png');
+}
+
+#ui-score, #ui-lives, #ui-time, #ui-cows, #ui-debug {
+  position: relative;
+  font-family: 'LT Galaxy Reverse', sans-serif;
+  color: rgb(140, 167, 243);
+  text-shadow: 0px 2px black;
+  padding: 12px 12px;
+  width: 150px; 
+  text-align: left; 
+  overflow: hidden; 
+  white-space: nowrap; 
+}
+
+.waypoint {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  z-index: 20;
+  overflow: hidden;
+  background-image: url('../img/sWayPointDebug.png');
+}
+
+#helptext-container {
+  position: absolute;
+  padding: 0px;
+  margin: 0px;
+  width: 960px;
+  height: auto;
+  overflow: hidden;
+  color:aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.floating-score {
+  z-index: 100;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;  
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  position: absolute;
+  /*font-family: "NesFONT";*/
+  white-space: pre;
+  text-align : center;
+  font-family: 'LT Galaxy Reverse', sans-serif;
+  animation: float-up-fade 2001ms linear;
+  color: rgb(255, 238, 2);
+  text-shadow: rgb(0, 0, 0) 0px 1px;
+  margin: auto;
+  padding: 10px;
+}
+
+@keyframes float-up-fade {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-25PX); opacity: .75; }
+  100% { transform: translateY(-50px); opacity: 0; }
+}
+
+#mainMenu {
+  display: flex;
+  width: 768px;
+  height: 768px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../img/Title.png');
+  background-size: 768px 768px;
+  background-repeat: no-repeat;
+}
+
+#mainMenu button {
+  background-color: rgb(48, 23, 45);
+  color: rgb(163, 84, 187);
+  font-family: "NesFONT";
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+  margin-bottom: 4px;
+  padding: 14px;
+  font-size: 18px;
+}
+
+.highlighted {
+  color: rgb(222, 255, 36) !important; 
+  background-color: rgb(90, 49, 85); 
+  text-shadow: 0px 2px #000000;
+}
+
+.volume-indicator-background {
+  background-color: rgb(12, 3, 14);
+  height: 4px;
+  width: 260px;
+  padding: 0px 0px;
+  margin: 0px 0px;;
+}
+
+.volume-indicator {
+  background-color: rgb(129, 36, 141);
+  height: 4px;
+  width: 260px;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  margin-top: 8px;
+}
+ 
+.pause-menu-visible {
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 768px;
+  height: 728px;
+  left: 0px;
+  top: 48px;
+  background-color: #0000007e;
+}
+  
+.pause-menu-visible button {
+  z-index: inherit;
+  background-color: rgb(48, 23, 45);
+  color: rgb(163, 84, 187);
+  font-family: "NesFONT";
+  border-radius: 5px;
+  width: 300px;
+  margin: 10px;
+  margin-bottom: 4px;
+  padding: 14px;
+  font-size: 18px;
+}
+  
+#pauseText {
+  z-index: inherit;
+  font-family: "NesFONT";
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#help-text {
+  z-index: inherit;
+  font-family: "NesFONT";
+  font-size: 24px;
+  color: rgb(41, 25, 48);
+  margin-bottom: 20px;
+}
+
+
+#health-bar-frame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 18px;
+  background-color: grey;
+  display: none;
+}
+
+#health-bar {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(143, 26, 17);
+}
+
+#go-image {
+  display: block;
+  position: absolute;
+  width: 282px;
+  height: 75px;
+  left: 243px;
+  top: 40px;
+  background-image: url('../img/sGameOver.png');
+}
+
+#go-image-2 {
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  width: 162px;
+  height: 162px;
+  left: 303px;
+  top: 215px;
+  transform: scale(2,2);
+  background-image: url('../img/sGameLose.png');
+}
+
+.go-menu-visible {
+  z-index: 2000;
+  left: 0px;
+  top: 0px;
+  
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  position: absolute;
+  width: 768px;
+  height: 768px;
+  font-family: "NesFONT";
+  background-color: #000000;
+  color: white;
+  left: 0px;
+  top: 48px;
+}
+
+#go-text {
+  margin-top: 250px;
+  text-align: center;
+  top: 600px !important;
+}
+
+#playerNameInput {
+  position:absolute;
+  width: 300px;
+  height: 40px;
+  font-family: "NesFONT";
+  font-size: 20px;
+  background-color: #222;
+  color: white;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  margin-top: 350px;
+}
+
+#playerNameInput::placeholder {
+  color: #aaa;
+}
+
+#playerNameInput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.scores-container {
+  z-index: 3000;
+  font-family: "NesFONT";
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+
+.score-item {
+  display: grid; 
+  grid-template-columns: 60px 300px 200px; 
+  justify-content: space-evenly;
+  width: 100%; 
+  padding: 0;
+}
+
+.score-part {
+  padding: 5px;
+}
+
+.indexDiv {
+  grid-column: 1; 
+  width: 40px;
+  text-align: left;
+}
+
+.nameDiv {
+  grid-column: 2;
+  width:auto;
+  text-align: left;
+}
+
+.scoreDiv {
+  grid-column: 3; 
+  width: auto;
+  text-align: right;
+}
+
+#long-intro-background {
+  position: absolute;
+  width: 768px;
+  height: 768px;
+  left: 0;
+  top: 0;
+  background-color: #000000;
+}
+
+#long-intro-image {
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  width: 162px;
+  height: 162px;
+  scale: 3, 3;
+  background-image: url('../img/sLongIntro.png');
+  transform: translate(-50%, -35%) scale(2,2);
+}
+
+#typewriter-text-c, #typewriter-text-l {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -70%);
+  font-family: "NesFONT";
+  background-color: #000000;
+  color: white;
+}
+
+#typewriter-text-c {
+  text-align: center;
+}
+
+#typewriter-text-l {
+  text-align: left;
+}
+
+#warning-div {
+  z-index: 10000;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 0, 0);
+  text-shadow: 0 2px 0 black;
+  font-family: "NesFONT";
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

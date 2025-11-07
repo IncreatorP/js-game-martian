@@ -1,0 +1,101 @@
+.enemy { /* basic UFO */
+    z-index: 50; 
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemy_UFO.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+
+.enemy-shadow {
+    z-index: 15;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemy_UFO.png");
+    filter: grayscale(100%) brightness(0);
+    opacity: 0.3;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+@keyframes basicEnemy {
+    from { background-position: 0px; }
+    to { background-position: -384px; } 
+}
+
+.enemy-flyby {
+    z-index: 50; 
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyFlybyR.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+
+.enemy-flyby-shadow {
+    z-index: 15;     
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyFlybyR.png");
+    filter: grayscale(100%) brightness(0);
+    opacity: 0.3;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+
+.enemy-kamikaze {
+    z-index: 50; 
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyKamikaze.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+.enemy-kamikaze-shadow {
+    z-index: 15;     
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyKamikaze.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+
+.enemy-boss {
+    z-index: 50; 
+    position: absolute;
+    width: 144px;
+    height: 122px;
+    background-image: url("../img/sBoss.png");
+    background-position-x: 0px;
+    overflow:hidden;
+}
+.enemy-boss-shadow {
+    z-index: 15;     
+    position: absolute;
+    width: 144px;
+    height: 122px;
+    background-image: url("../img/sBoss.png");
+    overflow:hidden;
+}
+
+.enemy-mine {
+    z-index: 50; 
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyMine.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}
+.enemy-mine-shadow {
+    z-index: 15;     
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-image: url("../img/sEnemyMine.png");
+    overflow:hidden;
+    animation: basicEnemy 1200ms steps(8) infinite; 
+}

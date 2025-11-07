@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Martian Rustlers</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+    <link href="https://fonts.cdnfonts.com/css/lt-galaxy-reverse" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/background.css">
+    <link rel="stylesheet" type="text/css" href="css/enemies.css">
+    <link rel="stylesheet" type="text/css" href="css/gameElements.css">
+    <link rel="stylesheet" type="text/css" href="css/fx.css">
+    <link rel="stylesheet" type="text/css" href="css/ui.css">
+</head>
+<body>
+    <div id="game-container">  
+
+        <div id="gameOverMenu" class="go-menu-visible"> 
+            <div id="go-image"></div> 
+            <div id="go-image-2"></div> 
+            <div id="go-text">Game over!</div>
+        </div>       
+
+        <!-- menu -->
+        <div id="mainMenu">   
+            <button id="startButton">Start</button>
+            <button id="scoresButton">Scores</button>
+            <button id="musicButton">Music Off</button>
+            <button id="soundButton">Sounds On</button>
+            <button id="graphicsButton">Graphics: High</button>
+            <button id="fpsButton">FPS lock: No</button>
+            <div id="help-text"></div>
+        </div>
+
+         <div id="pauseMenu" class="pause-menu-visible"> 
+            <div id="pauseText">Game Paused</div>       
+            <button id="continueBtn">Continue</button>
+            <button id="restartBtn">Restart</button>
+            <button id="exitBtn">Quit to Title</button>
+        </div>  
+          
+    </div>
+  
+    <script src="scripts/init.js"></script>
+    <script src="scripts/highScore.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/pause.js"></script>
+    <script src="scripts/objects.js"></script>
+    <script src="scripts/powerups.js"></script>
+    <script src="scripts/enemy.js"></script>
+    <script src="scripts/time.js"></script>
+    <script src="scripts/audio.js"></script>
+    <script src="scripts/math.js"></script>
+    <script src="scripts/backgrounds.js"></script>
+    <script src="scripts/tileSystem.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/eventListeners.js"></script>
+    <script src="scripts/intro.js"></script>
+
+    <script>        
+        makeUI();
+        initHighScore();
+        packageDom();
+        openMainMenu();
+    </script>
+</body>
+</html>

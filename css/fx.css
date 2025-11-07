@@ -1,0 +1,75 @@
+.explosion {
+    z-index: 100; 
+    position: absolute;
+    width: 48px; /* 1 frame size */
+    height: 48px;
+    background: url('/img/sExplosionTest.png'); /* sprite sheet */
+    animation: playExplosion 200ms steps(6) 1; /* 6 frames, 1 second, play once */
+}
+
+@keyframes playExplosion {
+    from { background-position: 0px; }
+    to { background-position: -288px; } /* frames x size */
+}
+
+.blink { /* white blink effect, additive */
+    filter: grayscale(100%) brightness(1000%);
+    transition: filter 0.025s ease-in-out;
+}
+
+.plasmahit {
+    z-index: 100; 
+    position: absolute;
+    width: 16px; 
+    height: 16px;
+    background: url('../img/sFxPlasmahit.png');
+    animation: playPlasmahit 100ms steps(6) 1; 
+}
+@keyframes playPlasmahit {
+    from { background-position: 0px; }
+    to { background-position: -96px; }
+}
+
+.explosionbig {
+    z-index: 100; 
+    position: absolute;
+    width: 48px; /* 1 frame size */
+    height: 48px;
+    background: url('../img/sExplosionBig.png');
+    animation: playExplosionBig 600ms steps(10) 1; 
+}
+
+@keyframes playExplosionBig {
+    from { background-position: 0px; }
+    to { background-position: -480px; } /* frames x size */
+}
+
+.explosionbig2 {
+    z-index: 100; 
+    position: absolute;
+    width: 144px; /* 1 frame size */
+    height: 144px;
+    background: url('../img/sExplosionBig2.png');
+    animation: playExplosionBig2 600ms steps(8) 1; 
+}
+
+@keyframes playExplosionBig2 {
+    from { background-position: 0px; }
+    to { background-position: -1152px; } /* frames x size */
+}
+
+
+
+.invincible {
+    animation: colorShift 0.5s infinite ease-in-out;
+}
+
+@keyframes colorShift {
+    0%, 100% {
+      filter: invert(75%);
+    }
+    50% 
+    {
+      filter: invert(0%);
+    }
+  }

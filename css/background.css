@@ -1,0 +1,115 @@
+.background1 {
+    z-index: 0;
+    background-image: url('../img/Background1.png');
+    position: absolute;
+    width: 768px;  
+    height: 768px;  
+    top: 0px;
+    left: 0px;
+}
+
+.reference-1 {
+    display: none;
+    z-index: 1000;
+    background-color: blue;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+.reference-2 {
+    display: none;
+    z-index: 1000;
+    background-color: red;
+    width: 48px;
+    height: 48px;
+    position: absolute;
+}
+
+#introBackground {
+    z-index: 1000; 
+    background-image: url('../img/sIntro_Shipframe.png');
+    position: absolute;
+    width: 768px;  
+    height: 768px;  
+    top: 0px;
+    left: 0px;
+}
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#introDoor {
+    z-index: 1000; 
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    left: 336px;
+    top: 432px;
+    background: url('../img/sIntro_ShipDoor.png'); /* sprite sheet */
+    animation: playIntro 5s steps(32) 1 forwards;
+}
+
+@keyframes playIntro {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -3072px 0px; }  
+}
+
+.tileset1-sand {
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sSandsOfDoom.png');
+    width: 48px;
+    height: 48px;   
+}
+
+.tileset2-dunes {
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sSandsOfDoom2.png');
+    width: 48px;
+    height: 48px;   
+}
+
+.tileset3-stones {
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sStones.png');
+    width: 48px;
+    height: 48px;   
+}
+
+.tileset4-tough {
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sTough.png');
+    width: 48px;
+    height: 48px;   
+}
+
+.tileset5-desert { 
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sDesert.png');
+    width: 48px;
+    height: 48px;   
+}
+
+.tileset6-hills { 
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tiles/sRange.png');
+    width: 48px;
+    height: 48px;   
+}
+
+
+
+.tileset-base {
+    z-index: 10;
+    position: absolute;
+    background-image: url('../img/tileBase.png');
+    width: 48px;
+    height: 48px;   
+}
